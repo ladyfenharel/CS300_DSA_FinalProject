@@ -12,6 +12,7 @@ public:
     std::vector<std::string> prerequisites; // List of prerequisite course numbers
 
     // Constructor
+    Course();  // Default constructor
     Course(const std::string& number, const std::string& title, const std::vector<std::string>& prereqs);
 
     // Print course details

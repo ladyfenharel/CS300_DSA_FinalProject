@@ -6,18 +6,26 @@
 #include <algorithm>
 #include <sstream>
 #include "Course.h"
+#include "Course.cpp"
 
 using namespace std;
 
 // Global hash table to store courses
 unordered_map<string, Course> courseTable;
 
-// Function prototypes
+// Function declarations
 void LoadCoursesFromFile(const string& fileName);
 void PrintAllCourses();
 void PrintCourseInformation(const string& courseNumber);
 void DisplayMenu();
 
+
+/**********************************************************
+*   LoadCoursesFromFile()                                 *
+*                                                         *
+*   Load a list of courses from a file from               *
+*   the user with error handling                          *
+***********************************************************/
 void LoadCoursesFromFile(const string& fileName) {
     ifstream inFile(fileName);
     if (!inFile) {
@@ -54,6 +62,12 @@ void LoadCoursesFromFile(const string& fileName) {
     cout << "Courses successfully loaded.\n";
 }
 
+/**********************************************************
+*   PrintAllCourses()                                     *
+*                                                         *
+*   Print each course from hash table in a                *
+*   formatted order                                       *
+***********************************************************/
 void PrintAllCourses() {
     if (courseTable.empty()) {
         cout << "No courses loaded. Please load a file first.\n";
@@ -73,6 +87,11 @@ void PrintAllCourses() {
     }
 }
 
+/**********************************************************
+ *  PrintCourseInformation()                             *
+ *                                                       * 
+ * Prints information about a specific course            *
+ * *******************************************************/
 void PrintCourseInformation(const string& courseNumber) {
     auto it = courseTable.find(courseNumber);
     if (it == courseTable.end()) {
@@ -84,9 +103,14 @@ void PrintCourseInformation(const string& courseNumber) {
     course.PrintCourseInfo(); // Use the class method to print course details
 }
 
+/*********************************************************
+ *  DisplayMenu()                                        *
+ *                                                       * 
+ *  Displays the menu options for the user               *
+ * ******************************************************/
 void DisplayMenu() {
     cout << "\nMenu:\n";
-    cout << "1. Load Data Structure\n";
+    cout << "1. Load File Data\n";
     cout << "2. Print Course List\n";
     cout << "3. Print Course Information\n";
     cout << "9. Exit\n";

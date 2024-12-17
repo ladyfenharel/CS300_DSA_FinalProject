@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/amanda/Desktop/Coding/CS300_DSA_FinalProject/main'
+relocations:     []
+...

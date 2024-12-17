@@ -1,5 +1,9 @@
 #include "Course.h"
 
+Course::Course() : courseNumber(""), courseTitle(""), prerequisites() {
+    // Default initialization
+}
+
 // Constructor implementation
 Course::Course(const std::string& number, const std::string& title, const std::vector<std::string>& prereqs)
     : courseNumber(number), courseTitle(title), prerequisites(prereqs) {}
