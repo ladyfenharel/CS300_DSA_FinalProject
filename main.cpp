@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <sstream>
 #include "Course.h"
-#include "Course.cpp"
 
 using namespace std;
 
@@ -114,7 +113,7 @@ void DisplayMenu() {
     cout << "2. Print Course List\n";
     cout << "3. Print Course Information\n";
     cout << "9. Exit\n";
-    cout << "Enter your choice: ";
+    cout << "What would you like to do? ";
 }
 
 int main() {
@@ -142,7 +141,7 @@ int main() {
                 break;
             }
             case 9:
-                cout << "Exiting program.\n";
+                cout << "Thanks for using the Course Selector!\n";
                 break;
             default:
                 cout << "Invalid choice. Please try again.\n";
